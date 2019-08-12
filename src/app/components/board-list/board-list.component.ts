@@ -29,11 +29,13 @@ export class BoardListComponent implements OnInit {
   onDelete(bNum: number){
     if(confirm('Are you sure to delete this record?')){
       this.boardService.deleteBoard(bNum).subscribe(res =>{
-        this.boardService.refreshList();
+       
         console.log("Deleted successfully");
       });
       
     }
+    this.boardService.refreshList();
+    
    
   }
   

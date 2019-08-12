@@ -20,6 +20,7 @@ export class BoardFormComponent implements OnInit {
   resetForm(form? : NgForm){
     if(form != null) {
       form.resetForm();
+      
     }
     
       this.service.formData = {
@@ -28,6 +29,7 @@ export class BoardFormComponent implements OnInit {
         bContent: '' ,
         bId: ''
       }
+   
     
   }
   
@@ -35,11 +37,17 @@ export class BoardFormComponent implements OnInit {
     //bNum 값이 없으면? Post  ,     값이 있으면? update
     if(form.value.bNum == null) {
       
-        this.insertRecord(form);
+      this.insertRecord(form);
+      this.service.refreshList();
+    }else if(form.value.bNum) {
+      this.updateRecord(form);
+      this.service.refreshList();
+    }else{
+      this.service.refreshList();
     }
-    else{
-        this.updateRecord(form);
-      }
+  
+    
+    
     
   }
 
@@ -47,7 +55,7 @@ export class BoardFormComponent implements OnInit {
     this.service.postBoard(form.value).subscribe(res =>{
       console.log('insert  Success');
       this.resetForm(form);
-      this.service.refreshList();
+      
      
       
     });
@@ -57,7 +65,7 @@ export class BoardFormComponent implements OnInit {
     this.service.putBoard(form.value).subscribe(res =>{
       console.log('update  Success');
       this.resetForm(form);
-      this.service.refreshList();
+      
     });
   }
 }

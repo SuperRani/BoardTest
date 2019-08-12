@@ -1,0 +1,31 @@
+Index: src/app/components/board-form/board-form.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/components/board-form/board-form.component.ts	(date 1565582221000)
++++ src/app/components/board-form/board-form.component.ts	(date 1565590049617)
+@@ -48,6 +48,7 @@
+       console.log('insert  Success');
+       this.resetForm(form);
+       this.service.refreshList();
++     
+       
+     });
+   }
+Index: src/app/services/boards.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/services/boards.service.ts	(date 1565582221000)
++++ src/app/services/boards.service.ts	(date 1565589978108)
+@@ -27,7 +27,7 @@
+   refreshList(){
+     this.http.get(this.API_URL +'/board')
+       .toPromise().then(res => this.list = res as Board[]);
+-      console.log('list:',this.list);
++      
+   }
+   
+   

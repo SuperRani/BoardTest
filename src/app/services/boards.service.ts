@@ -27,7 +27,7 @@ export class BoardsService {
   refreshList(){
     this.http.get(this.API_URL +'/board')
       .toPromise().then(res => this.list = res as Board[]);
-      console.log('list:',this.list);
+      
   }
   
   

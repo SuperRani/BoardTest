@@ -48,6 +48,7 @@ export class BoardFormComponent implements OnInit {
       console.log('insert  Success');
       this.resetForm(form);
       this.service.refreshList();
+     
       
     });
   }

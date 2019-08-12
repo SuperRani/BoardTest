@@ -1,0 +1,33 @@
+
+.trList:hover{
+  background-color: #ffe16c;
+
+}
+
+/*.trList{*/
+/*  text-align: center;*/
+/*}*/
+
+/*thead{*/
+/*  position: relative;*/
+/*}*/
+
+/*tbody{*/
+/*  position: relative;*/
+/*}*/
+
+
+
+.menuList{
+  /*width: 100%;*/
+
+  background: #40dfa1;
+  /*margin: auto;*/
+  text-align: center;
+}
+
+
+.container{
+  margin-top: 20px;
+
+}

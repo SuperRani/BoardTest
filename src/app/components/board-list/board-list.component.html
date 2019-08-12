@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h2>왜 안나올까요? </h2>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr class = "menuList">
+        <th>#</th>
+        <th>제목</th>
+        <th>내용</th>
+        <th>아이디 </th>
+        <th></th>
+      </tr>
+      </thead>
+
+
+      <tbody>
+      <tr *ngFor="let bos of boardService.list | paginate: {itemsPerPage: 10,currentPage: pageActual }; let i = index" class="trList">
+        <td (click)="populationForm(bos)">[{{bos.bNum}}]</td>
+        <td (click)="populationForm(bos)"> {{bos.bTitle}}</td>
+        <td (click)="populationForm(bos)"> {{bos.bContent}}</td>
+        <td (click)="populationForm(bos)"> {{bos.bId}}</td>
+        <td><button (click)="onDelete(bos.bNum)" class="btn btn-sm btn-outline-danger"></button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<pagination-controls (pageChange)="pageActual = $event" class="page"></pagination-controls>
